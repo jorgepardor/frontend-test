@@ -5,13 +5,9 @@ import { Header } from './js/components/header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="Header">
+    <div>
         <Header />
-      </header>
-      <section>
         <Photofeed />
-      </section>
     </div>
   );
 }
