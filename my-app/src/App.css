@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.Header {
+  
+  /* min-height: 100vh; */
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center;
+  justify-content: center; */
+  min-height: 20vh;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+
+.Photofeed {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: f6f6f6;
+}
+  
+.Photofeed-row {
+  display: flex;
+}
+
+.Photofeed-col {
+  flex: 50%;
+}
+
+.Photofeed-elem {
+  padding: 6px;
+}
+
+.Photofeed-img {
+
+}
