@@ -9,7 +9,7 @@ function App() {
       <header className="Header">
         <Header />
       </header>
-      <section className='Photofeed'>
+      <section>
         <Photofeed />
       </section>
     </div>

@@ -5,8 +5,8 @@ export const Photofeed = () => {
     const [pictures, more] = useInfScroll()
     
     return (
-        <div className="App">
-        <div>
+        <div className="Photofeed-base">
+        <div className='Photofeed-container'>
             {pictures.map((value, index) => (
             // <p key={index}>{value.title}</p>
             <img className="Photofeed-img" key={index} src={value.main_attachment.small} alt={value.title}/>
