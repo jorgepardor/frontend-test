@@ -5,7 +5,7 @@ import { Header } from './js/components/header';
 
 function App() {
   return (
-    <div>
+    <div className='App'>
         <Header />
         <Photofeed />
     </div>

@@ -1,14 +1,15 @@
 .App {
   text-align: center;
+  width: 70%;
+  margin: auto;
 }
 
 .Header {
   height: 15vh;
-  width: 70%;
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -26,97 +27,98 @@
 }
 
 .Search_form {
-  color: #555;
-  display: flex;
+  background-color: #f6f6f6;
+  width: 18em;
   padding: 2px;
-  border: 1px solid currentColor;
-  border-radius: 5px;
+  height: 16px;
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: x-small;
+  font-weight: bold;
+  padding-left: 22px;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/VisualEditor_-_Icon_-_Search.svg")
+    no-repeat left;
+  background-size: 28px;
 }
 
-
-
 .Photofeed-base {
-  width: 70%;
-  min-height: 100vh;
-  margin: auto;
+  min-height: 85vh;
   background-color: #f6f6f6;
 }
 
 .Photofeed-container {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  /* padding-left: 3rem;
+  padding-right: 3rem; */
   padding-top: 2rem;
   padding-bottom: 2rem;
-  display: grid;  
+  /* margin: auto; */
+  height: 85vh;
+  text-align: center;
 }
 
 .card {
-  /* Add shadows to create the "card" effect */
-  width: 30%;
+  list-style-type: none;
+  width: 46%;
   border: rgba(85, 85, 85, 0.137) solid 1px;
-  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   transition: 0.3s;
   position: relative;
- 
- 
+  /* float: left; */
+  display: inline-block;
+  margin: 10px;
+}
+
+.card:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .card img {
   width: 100%;
 }
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(85, 85, 85, 0.08);
 }
 
-/* Add some padding inside the card container */
 .container {
-
   padding: 6px 16px;
   background-color: white;
 }
 
-.topright {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  font-size: 18px;
-}
-
-.topright {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  font-size: 18px;
-}
-
 .topleft {
   position: absolute;
-  top: 8px;
-  left: 16px;
+  top: 0px;
+  left: 0px;
+  width: 40%;
+  height: 21%;
+  background: url("https://res.cloudinary.com/jorgepardor/image/upload/v1652381045/rectangle_anpyu1.png")
+    no-repeat left;
+  background-size: cover;
+}
+
+.topleft p {
   font-size: 18px;
+  padding-left: 12px;
 }
 
 .picture_title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
   color: black;
   font-size: Large;
   line-height: 0;
-
 }
 
 .picture_author {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   text-align: center;
   color: lightgrey;
   font-size: medium;
   line-height: 0.5em;
-
-  
 }
 
 .author {
@@ -124,7 +126,7 @@
 }
 
 .picture_price {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: left;
   color: black;
   font-size: medium;
@@ -135,18 +137,56 @@
   font-size: small;
 }
 
-
 .interactions {
-  font-family: 'Montserrat', sans-serif;
+  display: flex;
+}
+
+.interactions button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.interactions p {
+  font-family: "Montserrat", sans-serif;
   text-align: right;
   color: white;
   font-size: medium;
   font-weight: bolder;
   line-height: 0;
+  padding-left: 8px;
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
 }
 
 .topright svg {
   width: 1.5rem;
   fill: white;
-  
+}
+
+.notdisplayed {
+  display: none;
+}
+
+.displayed {
+  display: flex;
+  margin: auto;
+}
+
+.test {
+  height: 85vh;
+  overflow: auto;
+}
+
+.loader {
+  width: 100%;
 }
