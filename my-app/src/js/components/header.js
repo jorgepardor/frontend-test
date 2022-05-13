@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 
-export const Header = () => {
+export const Header = (props) => {
 
     const [inputText, setInputText] = useState("");
     let inputHandler = (e) => {
         var lowerCase = e.target.value.toLowerCase();
         setInputText(lowerCase);
-        // console.log (lowerCase);
     };
 
     let keySearch = (event) => {
         if(event.key === 'Enter'){
-          console.log('enter press here! ')
+            fetch("http://localhost:3100/images/", {
+            method: "GET",
+            body: {search: inputText},
+            }).then(res => res.json()).then(res => {props.setResult(res)});
+            
         }
       }
 

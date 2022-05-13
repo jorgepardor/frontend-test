@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "react-infinite-scroller": "^1.2.6"
+  },
+  "devDependencies": {
+    "cypress": "^9.6.1"
   }
 }
+
