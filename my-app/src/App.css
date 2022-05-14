@@ -1,6 +1,7 @@
 html {
   overflow: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -9,31 +10,27 @@ html {
 }
 
 .App {
-  text-align: center;
-  width: 70%;
+  /* text-align: center; */
+  width: 60vw;
   margin: auto;
 }
 
 .Header {
-  height: 15vh;
-  margin: auto;
+  height: 20vh;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
 }
 
-.Header_logo {
-  width: 30%;
-}
-
 .Logo {
+  height: 15vh;
   margin-left: auto;
   margin-right: auto;
 }
 
-.Header_search {
-  width: 70%;
+.Search {
+  padding-right: 40px;
 }
 
 .Search_form {
@@ -46,34 +43,33 @@ html {
   font-family: "Montserrat", sans-serif;
   font-size: x-small;
   font-weight: bold;
-  padding-left: 22px;
+  padding-left: 24px;
   background: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/VisualEditor_-_Icon_-_Search.svg")
     no-repeat left;
   background-size: 28px;
 }
 
 .Photofeed-base {
-  min-height: 85vh;
+  /* min-height: 70vh; */
   background-color: #f6f6f6;
 }
 
 .Photofeed-container {
-  /* padding-left: 3rem;
-  padding-right: 3rem; */
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  /* padding-bottom: 2rem; */
   /* margin: auto; */
-  height: 85vh;
+  /* height: 70vh; */
   text-align: center;
 }
 
 .card {
   list-style-type: none;
-  width: 46%;
+  width: 26vw;
   border: rgba(85, 85, 85, 0.137) solid 1px;
   transition: 0.3s;
   position: relative;
-  /* float: left; */
   display: inline-block;
   margin: 10px;
 }
@@ -109,7 +105,7 @@ html {
 }
 
 .topleft p {
-  font-size: 18px;
+  font-size: large;
   padding-left: 12px;
 }
 
@@ -193,10 +189,127 @@ html {
 }
 
 .test {
-  height: 85vh;
+  height: 80vh;
   overflow: auto;
 }
 
-.loader {
+/* .loader {
   width: 100%;
+} */
+
+@media screen and (max-width: 950px) {
+  body {
+    background-color: lightpink;
+  }
+
+  .App {
+    width: 90vw;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-color: lightcyan;
+  }
+
+  .App {
+    width: 100%;
+  }
+
+  .card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: lightcoral;
+  }
+
+  .App {
+    width: 100%;
+  }
+
+  .card {
+    width: 80%;
+  }
+
+  .picture_title {
+    font-size: medium;
+  }
+
+  .picture_author {
+    font-size: small;
+  }
+
+  .topleft p {
+    font-size: medium;
+  }
+
+  .Header {
+    height: 15vh;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .Logo {
+    height: 12vh;
+    padding-left: 20px;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  .Search_form {
+    width: 18em;
+    padding: 2px;
+    height: 18px;
+    font-size: x-small;
+    font-weight: bold;
+    padding-left: 30px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/VisualEditor_-_Icon_-_Search.svg")
+      no-repeat left;
+    background-size: 36px;
+  }
+
+  .test {
+    height: 85vh;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  body {
+    background-color: lightgreen;
+  }
+
+  .Logo {
+    height: 10vh;
+    padding-left: 20px;
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  .Search_form {
+    width: 16em;
+    padding: 2px;
+    height: 14px;
+    font-size: xx-small;
+    font-weight: bold;
+    padding-left: 6px;
+    background: none;
+  }
+
+  .Header {
+    height: 12vh;
+    display: flex;
+  }
+
+  .test {
+    height: 90vh;
+  }
 }
