@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <div className='App'>
+    <div className='app'>
         <Header setResult={setResult}/>
         <Photofeed result={result} setResult={setResult}/>
     </div>

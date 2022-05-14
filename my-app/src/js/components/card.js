@@ -2,16 +2,16 @@ import React, { useState } from "react";
 
 const Card = (props) => {
 
-    const [display, setDisplay] = useState("notdisplayed");
+    const [display, setDisplay] = useState("interactions__notdisplayed");
     
     const showButton = e => {
         e.preventDefault();
-        setDisplay("displayed");
+        setDisplay("interactions__displayed");
     };
     
     const hideButton = e => {
         e.preventDefault();
-        setDisplay("notdisplayed");
+        setDisplay("interactions__notdisplayed");
     };
 
     const liked = (id) => {
@@ -32,9 +32,9 @@ const Card = (props) => {
             <img src={value.main_attachment.small} alt={value.title}/>
             <div className={display}>
 
-                <div className="topright">
+                <div className="interactions">
 
-                    <div className="interactions">
+                    <div className="socialmedia">
                     <button onClick={() => {
                        liked(value.id)
                     }}>
@@ -44,31 +44,28 @@ const Card = (props) => {
                     
                     </button>
             
-                    <p className='interactions'>{value.likes_count}</p>
+                    <p>{value.likes_count}</p>
 
                     </div>
 
-                    <div className="interactions">
+                    <div className="socialmedia">
 
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M614.2 334.8C610.5 325.8 601.7 319.1 592 319.1H544V176C544 131.9 508.1 96 464 96h-128c-17.67 0-32 14.31-32 32s14.33 32 32 32h128C472.8 160 480 167.2 480 176v143.1h-48c-9.703 0-18.45 5.844-22.17 14.82s-1.656 19.29 5.203 26.16l80 80.02C499.7 445.7 505.9 448 512 448s12.28-2.344 16.97-7.031l80-80.02C615.8 354.1 617.9 343.8 614.2 334.8zM304 352h-128C167.2 352 160 344.8 160 336V192h48c9.703 0 18.45-5.844 22.17-14.82s1.656-19.29-5.203-26.16l-80-80.02C140.3 66.34 134.1 64 128 64S115.7 66.34 111 71.03l-80 80.02C24.17 157.9 22.11 168.2 25.83 177.2S38.3 192 48 192H96V336C96 380.1 131.9 416 176 416h128c17.67 0 32-14.31 32-32S321.7 352 304 352z"/></svg>
         
-                    <p className='interactions'>{value.likes_count}</p>
+                    <p>{value.likes_count}</p>
 
                     </div>
-                  
-            
-               
-
-                </div>
+            </div>
     
+        </div>
+
+            <div className="price">
+                <p className='price__number'>{value.price}<span className='price__currency'>€</span></p>
             </div>
 
-            <div className="topleft">
-                <p className='picture_price'>{value.price}<span className='currency'>€</span></p>
-            </div>
-
-            <div className='container'><p className='picture_title'>{value.title}</p>
-                <p className='picture_author'>by <span className='author'>{value.author}</span></p>
+            <div className='image__info'>
+                <p className='image__info__title'>{value.title}</p>
+                <p className='image__info__author'>by <span className='author'>{value.author}</span></p>
             </div>
 
         </div>

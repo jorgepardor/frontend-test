@@ -19,13 +19,13 @@ export const Header = (props) => {
       }
 
     return (  
-        <div className="Header">
-            <div>
-                <img className="Logo" src="https://res.cloudinary.com/jorgepardor/image/upload/v1652198954/mainlogo_lmbkm0.png" alt="Logotipo"/>
+        <div className="header">
+            <div className='header__logo'>
+                <img src="https://res.cloudinary.com/jorgepardor/image/upload/v1652198954/mainlogo_lmbkm0.png" alt="Logotipo"/>
             </div>
-            <div className='Search'>
+            <div className='header__search'>
                 <form>
-                    <input type="text" className="Search_form" onChange={inputHandler} placeholder="Are you looking for something?" onKeyPress={keySearch}></input>
+                    <input type="text" className="header__search__form" onChange={inputHandler} placeholder="Are you looking for something?" onKeyPress={keySearch}></input>
                 </form>
             </div>
 

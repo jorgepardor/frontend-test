@@ -5,12 +5,15 @@ import Card from './card';
 
 export const Photofeed = (props) => {
 
+
     const [blocks, setBlocks] = useState(1)
 
     const more = async () => {
         const more_images = await fetch_images(blocks + 1)
         setBlocks(prev => prev + 1)
-        props.setPictures(prev => [...prev, ...more_images])
+
+        // Revisar esta linea, originalmente tenia un setPictures, pero esa funcion no esta definida
+        props.setResult(prev => [...prev, ...more_images])
       }
 
     const fetch_images = async page => (await fetch(`http://localhost:3100/images?page=${page}&limit=10`)).json()
@@ -23,8 +26,8 @@ export const Photofeed = (props) => {
       })
 
     return (
-        <div className="Photofeed-base">
-            <div className='test'>
+        <div className="photofeed">
+
                 <InfiniteScroll
                     pageStart={0}
                     loadMore={more}
@@ -32,16 +35,16 @@ export const Photofeed = (props) => {
                     loader={""}
                     useWindow={false}
                 >
-                    <ul className="Photofeed-container">
+                    <ul className="photofeed__container">
                     {props.result.map((value, index) => {
                                 return (
-                                   <li className='card'>
+                                   <li className='photofeed__container__element'>
                                        <Card value = {value} />
                                    </li> 
                                 );})} 
                             </ul>
                 </InfiniteScroll>
-            </div>
+                                    
         </div>       
     )
 }

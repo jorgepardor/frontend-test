@@ -9,31 +9,27 @@ html {
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 
-.App {
-  /* text-align: center; */
+.app {
   width: 60vw;
   margin: auto;
 }
 
-.Header {
+.header {
   height: 20vh;
   display: flex;
-  /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
 }
 
-.Logo {
+.header__logo img {
   height: 15vh;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.Search {
+.header__search {
   padding-right: 40px;
 }
 
-.Search_form {
+.header__search__form {
   background-color: #f6f6f6;
   width: 18em;
   padding: 2px;
@@ -49,22 +45,21 @@ html {
   background-size: 28px;
 }
 
-.Photofeed-base {
-  /* min-height: 70vh; */
+.photofeed {
   background-color: #f6f6f6;
+  height: 80vh;
+  overflow: auto;
 }
 
-.Photofeed-container {
+.photofeed__container {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
-  /* padding-bottom: 2rem; */
-  /* margin: auto; */
-  /* height: 70vh; */
+
   text-align: center;
 }
 
-.card {
+.photofeed__container__element {
   list-style-type: none;
   width: 26vw;
   border: rgba(85, 85, 85, 0.137) solid 1px;
@@ -74,42 +69,43 @@ html {
   margin: 10px;
 }
 
-.card:after {
+.photofeed__container__element:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.card img {
+.photofeed__container__element img {
   width: 100%;
 }
 
-.card:hover {
+.photofeed__container__element:hover {
   box-shadow: 0 8px 16px 0 rgba(85, 85, 85, 0.08);
 }
 
-.container {
-  padding: 6px 16px;
+.image__info {
+  padding: 1px;
   background-color: white;
+  /* height: 8vh; */
 }
 
-.topleft {
+.price {
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 40%;
-  height: 21%;
+  width: 100%;
+  height: 23%;
   background: url("https://res.cloudinary.com/jorgepardor/image/upload/v1652381045/rectangle_anpyu1.png")
     no-repeat left;
-  background-size: cover;
+  background-size: contain;
 }
 
-.topleft p {
+.price__number {
   font-size: large;
   padding-left: 12px;
 }
 
-.picture_title {
+.image__info__title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -119,7 +115,7 @@ html {
   line-height: 0;
 }
 
-.picture_author {
+.image__info__author {
   font-family: "Playfair Display", serif;
   text-align: center;
   color: lightgrey;
@@ -131,7 +127,7 @@ html {
   color: black;
 }
 
-.picture_price {
+.price__number {
   font-family: "Montserrat", sans-serif;
   text-align: left;
   color: black;
@@ -139,15 +135,15 @@ html {
   font-weight: bolder;
 }
 
-.currency {
+.price__currency {
   font-size: small;
 }
 
-.interactions {
+.socialmedia {
   display: flex;
 }
 
-.interactions button {
+.socialmedia button {
   background: none;
   color: inherit;
   border: none;
@@ -157,7 +153,7 @@ html {
   outline: inherit;
 }
 
-.interactions p {
+.socialmedia p {
   font-family: "Montserrat", sans-serif;
   text-align: right;
   color: white;
@@ -167,90 +163,78 @@ html {
   padding-left: 8px;
 }
 
-.topright {
+.interactions {
   position: absolute;
   top: 8px;
   right: 16px;
   font-size: 18px;
 }
 
-.topright svg {
+.interactions svg {
   width: 1.5rem;
   fill: white;
 }
 
-.notdisplayed {
+.interactions__notdisplayed {
   display: none;
 }
 
-.displayed {
+.interactions__displayed {
   display: flex;
   margin: auto;
 }
 
-.test {
-  height: 80vh;
-  overflow: auto;
+.loader {
+  width: 100%;
 }
 
-/* .loader {
-  width: 100%;
-} */
-
 @media screen and (max-width: 950px) {
-  body {
-    background-color: lightpink;
-  }
-
-  .App {
+  .app {
     width: 90vw;
   }
 
-  .card {
+  .photofeed__container__element {
     width: 45%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    background-color: lightcyan;
-  }
-
-  .App {
+  .app {
     width: 100%;
   }
 
-  .card {
+  .photofeed__container__element {
     width: 45%;
+  }
+
+  .price {
+    width: 100%;
+    height: 25%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  body {
-    background-color: lightcoral;
-  }
-
-  .App {
+  .app {
     width: 100%;
   }
 
-  .card {
+  .photofeed__container__element {
     width: 80%;
   }
 
-  .picture_title {
+  .image__info__title {
     font-size: medium;
   }
 
-  .picture_author {
+  .image__info__author {
     font-size: small;
   }
 
-  .topleft p {
+  /* .price p {
     font-size: medium;
-  }
+  } */
 
-  .Header {
+  .header {
     height: 15vh;
     display: flex;
     /* flex-direction: row; */
@@ -258,14 +242,22 @@ html {
     align-items: center;
   }
 
-  .Logo {
+  .price__number {
+    font-size: medium;
+  }
+
+  .price__currency {
+    font-size: x-small;
+  }
+
+  .header__logo img {
     height: 12vh;
     padding-left: 20px;
     /* margin-left: auto;
     margin-right: auto; */
   }
 
-  .Search_form {
+  .header__search__form {
     width: 18em;
     padding: 2px;
     height: 18px;
@@ -277,24 +269,30 @@ html {
     background-size: 36px;
   }
 
-  .test {
+  .photofeed {
     height: 85vh;
   }
 }
 
 @media screen and (max-width: 330px) {
-  body {
-    background-color: lightgreen;
-  }
-
-  .Logo {
+  .header__logo img {
     height: 10vh;
-    padding-left: 20px;
-    /* margin-left: auto;
-    margin-right: auto; */
   }
 
-  .Search_form {
+  .price {
+    width: 100%;
+    height: 24%;
+  }
+
+  .price__number {
+    font-size: small;
+  }
+
+  .price__currency {
+    font-size: x-small;
+  }
+
+  .header__search__form {
     width: 16em;
     padding: 2px;
     height: 14px;
@@ -304,12 +302,12 @@ html {
     background: none;
   }
 
-  .Header {
+  .header {
     height: 12vh;
     display: flex;
   }
 
-  .test {
+  .photofeed {
     height: 90vh;
   }
 }
