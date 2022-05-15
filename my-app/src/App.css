@@ -1,12 +1,6 @@
-html {
-  overflow: scroll;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  width: 0;
+  background: transparent;
 }
 
 .app {
@@ -55,7 +49,6 @@ html {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
-
   text-align: center;
 }
 
@@ -123,7 +116,7 @@ html {
   line-height: 0.5em;
 }
 
-.author {
+.image__info__authorname {
   color: black;
 }
 
@@ -141,6 +134,12 @@ html {
 
 .socialmedia {
   display: flex;
+  justify-content: flex-end;
+  margin-right: 4%;
+}
+
+.socialmedia:first-child {
+  margin-top: 4%;
 }
 
 .socialmedia button {
@@ -155,6 +154,7 @@ html {
 
 .socialmedia p {
   font-family: "Montserrat", sans-serif;
+  font-size: 18px;
   text-align: right;
   color: white;
   font-size: medium;
@@ -165,12 +165,16 @@ html {
 
 .interactions {
   position: absolute;
-  top: 8px;
-  right: 16px;
-  font-size: 18px;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  background: url("https://res.cloudinary.com/jorgepardor/image/upload/v1652601374/socialbg_tqhawm.png")
+    no-repeat right;
+  background-size: cover;
 }
 
-.interactions svg {
+.socialmedia svg {
   width: 1.5rem;
   fill: white;
 }
@@ -181,7 +185,6 @@ html {
 
 .interactions__displayed {
   display: flex;
-  margin: auto;
 }
 
 .loader {
@@ -218,43 +221,16 @@ html {
     width: 100%;
   }
 
-  .photofeed__container__element {
-    width: 80%;
-  }
-
-  .image__info__title {
-    font-size: medium;
-  }
-
-  .image__info__author {
-    font-size: small;
-  }
-
-  /* .price p {
-    font-size: medium;
-  } */
-
   .header {
     height: 15vh;
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-between;
     align-items: center;
-  }
-
-  .price__number {
-    font-size: medium;
-  }
-
-  .price__currency {
-    font-size: x-small;
   }
 
   .header__logo img {
     height: 12vh;
     padding-left: 20px;
-    /* margin-left: auto;
-    margin-right: auto; */
   }
 
   .header__search__form {
@@ -272,24 +248,36 @@ html {
   .photofeed {
     height: 85vh;
   }
-}
 
-@media screen and (max-width: 330px) {
-  .header__logo img {
-    height: 10vh;
+  .photofeed__container__element {
+    width: 80%;
   }
 
-  .price {
-    width: 100%;
-    height: 24%;
+  .image__info__title {
+    font-size: medium;
+  }
+
+  .image__info__author {
+    font-size: small;
   }
 
   .price__number {
-    font-size: small;
+    font-size: medium;
   }
 
   .price__currency {
     font-size: x-small;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .header {
+    height: 12vh;
+    display: flex;
+  }
+
+  .header__logo img {
+    height: 10vh;
   }
 
   .header__search__form {
@@ -302,12 +290,20 @@ html {
     background: none;
   }
 
-  .header {
-    height: 12vh;
-    display: flex;
-  }
-
   .photofeed {
     height: 90vh;
+  }
+
+  .price {
+    width: 100%;
+    height: 24%;
+  }
+
+  .price__number {
+    font-size: 0.9em;
+  }
+
+  .price__currency {
+    font-size: x-small;
   }
 }

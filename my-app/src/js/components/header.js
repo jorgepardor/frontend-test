@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const Header = (props) => {
 
-    const [inputText, setInputText] = useState("");
+    const [inputText, setInputText] = useState(""); //Funcion que se encarga de gestionar el input de búsqueda
     let inputHandler = (e) => {
         var lowerCase = e.target.value.toLowerCase();
         setInputText(lowerCase);
