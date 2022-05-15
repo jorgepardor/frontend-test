@@ -36,6 +36,7 @@ const Card = (props) => {
           <div className="interactions">
             <div className="socialmedia">
               <button
+                className={content.liked ? "interactions__liked" : ""}
                 onClick={() => {
                   liked(content.id);
                 }}
