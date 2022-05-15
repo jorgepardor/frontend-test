@@ -189,6 +189,10 @@
   fill: #83f3c6;
 }
 
+.portrait {
+  display: none;
+}
+
 .loader {
   width: 100%;
 }
@@ -215,6 +219,10 @@
   .price {
     width: 100%;
     height: 25%;
+  }
+
+  .portrait {
+    display: none;
   }
 }
 
@@ -270,6 +278,65 @@
   .price__currency {
     font-size: x-small;
   }
+
+  .landscape {
+    display: none;
+  }
+
+  .interactions__mobile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+
+  .portrait {
+    display: block;
+    border-top: rgba(85, 85, 85, 0.137) solid 1px;
+  }
+
+  .socialmedia__mobile {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: auto;
+  }
+
+  .socialmedia__mobile:first-child {
+    border-right: rgba(85, 85, 85, 0.137) solid 1px;
+  }
+
+  .socialmedia__mobile button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  .socialmedia__mobile p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: lightgray;
+    font-size: medium;
+    font-weight: bolder;
+    line-height: 0;
+    padding-left: 8px;
+  }
+
+  .socialmedia__mobile svg {
+    width: 1rem;
+    fill: lightgray;
+  }
+
+  .interactions__mobile__liked svg {
+    fill: #83f3c6;
+  }
 }
 
 @media screen and (max-width: 330px) {
@@ -307,5 +374,13 @@
 
   .price__currency {
     font-size: x-small;
+  }
+
+  .landscape {
+    display: none;
+  }
+
+  .portrait {
+    display: block;
   }
 }
